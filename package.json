@@ -1,0 +1,55 @@
+{
+  "name": "dsh-alt-enter-newline",
+  "version": "1.0.0",
+  "description": "Alt+Enter inserts a newline in the DeepSeek Harness Web composer",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "shortcuts",
+    "newline"
+  ],
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "lib/",
+    "cordis.patch.yml",
+    "locale/",
+    "icon.svg",
+    "README.md",
+    "README.en.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.19"
+  },
+  "icon": "./icon.svg",
+  "author": "liggest",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liggest/dsh-alt-enter-newline.git"
+  },
+  "bugs": "https://github.com/liggest/dsh-alt-enter-newline/issues",
+  "homepage": "https://github.com/liggest/dsh-alt-enter-newline#readme",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-shortcuts",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "license": "MIT"
+}
